@@ -15,12 +15,16 @@
  $f_usuario=isset($_POST['f_usuario'])? $_POST['f_usuario'] : NULL;
  $f_contra=isset($_POST['f_contra'])? $_POST['f_contra'] : NULL;
  //echo "el usuario es".$f_usuario."y la contraseña es".$f_contra;
-  $_session['acceso'];
- if($f_usuario=="juan"||$f_usuario=="lalo"||$f_usuario=="fabri"||$f_usuario=="nico"){
+  $_SESSION['acceso'] = isset($_SESSION['acceso'])? $_SESSION['acceso'] : NULL;
+ if($_SESSION['acceso']!="ok"){ 
+ if($f_usuario=="lalo"){
 	           if($f_contra=="1234"){
-				echo "muy bien acceso permitido";
-			                            }else{ echo "vos sos loco como vas a querer hackear";}
-                        }else{ echo "vos sos loco como vas a querer hackear";}        
+				   $_SESSION['acceso']="ok";
+			          }
+                }
+ } else { header('Location: inde_pagina.php');
+ echo "estoy aca";
+	 }
  ?>
  
 <div id="login">
