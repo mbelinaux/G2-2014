@@ -15,8 +15,8 @@
  if($f_usuario=="juan"||$f_usuario=="lalo"||$f_usuario=="fabri"||$f_usuario=="nico"){
 	           if($f_contra=="1234"){
 				echo "muy bien acceso permitido";
-			                            }else echo "vos sos loco como vas a querer hackear";
-                        }else echo "vos sos loco como vas a querer hackear";            
+			                            }else{ echo "vos sos loco como vas a querer hackear";}
+                        }else{ echo "vos sos loco como vas a querer hackear";}        
  ?>
  
 <div id="login">
