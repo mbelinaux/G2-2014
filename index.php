@@ -1,8 +1,11 @@
+<?php
+ session_start();
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Documento sin título</title>
+<title>Freackland Logeo</title>
 <link rel="StyleSheet" href="style.css" type="text/css">
 <script type="text/javascript" src="js/jquery-2.1.1.min (1).js"></script>
 </head>
@@ -12,6 +15,7 @@
  $f_usuario=isset($_POST['f_usuario'])? $_POST['f_usuario'] : NULL;
  $f_contra=isset($_POST['f_contra'])? $_POST['f_contra'] : NULL;
  //echo "el usuario es".$f_usuario."y la contraseña es".$f_contra;
+  $_session['acceso'];
  if($f_usuario=="juan"||$f_usuario=="lalo"||$f_usuario=="fabri"||$f_usuario=="nico"){
 	           if($f_contra=="1234"){
 				echo "muy bien acceso permitido";
