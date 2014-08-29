@@ -6,15 +6,16 @@
  //echo "el usuario es".$f_usuario."y la contraseña es".$f_contra;
   $_SESSION['acceso'] = isset($_SESSION['acceso'])? $_SESSION['acceso'] : NULL;
  if($_SESSION['acceso']!="ok"){ 
- if($f_usuario=="lalo"||$f_usuario=="fabri"){
-	           if($f_contra=="1234"){
+ 		
+ 		if($f_usuario=="lalo"||$f_usuario=="fabri"||$f_usuario=="majo"||$f_usuario=="nico"){
+	           if($f_contra=="cacheteala"){
 				   $_SESSION['acceso']="ok";
 				   header('Location: inde_pagina.php');
 			          }
                 }
  } else { header('Location: inde_pagina.php');
                  exit();
-				 //el exit sirve para q no se siga ejecutando lo q sigue
+				 //el exit sirve para q no se siga ejecutando lo q sigues
  	 }
 ?>
 <!doctype html>
