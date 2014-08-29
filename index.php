@@ -1,5 +1,21 @@
 <?php
  session_start();
+ 
+  $f_usuario=isset($_POST['f_usuario'])? $_POST['f_usuario'] : NULL;
+ $f_contra=isset($_POST['f_contra'])? $_POST['f_contra'] : NULL;
+ //echo "el usuario es".$f_usuario."y la contraseña es".$f_contra;
+  $_SESSION['acceso'] = isset($_SESSION['acceso'])? $_SESSION['acceso'] : NULL;
+ if($_SESSION['acceso']!="ok"){ 
+ if($f_usuario=="lalo"||$f_usuario=="fabri"){
+	           if($f_contra=="1234"){
+				   $_SESSION['acceso']="ok";
+				   header('Location: inde_pagina.php');
+			          }
+                }
+ } else { header('Location: inde_pagina.php');
+                 exit();
+				 //el exit sirve para q no se siga ejecutando lo q sigue
+ 	 }
 ?>
 <!doctype html>
 <html>
@@ -11,22 +27,8 @@
 </head>
 
 <body>
-<?php
- $f_usuario=isset($_POST['f_usuario'])? $_POST['f_usuario'] : NULL;
- $f_contra=isset($_POST['f_contra'])? $_POST['f_contra'] : NULL;
- //echo "el usuario es".$f_usuario."y la contraseña es".$f_contra;
-  $_SESSION['acceso'] = isset($_SESSION['acceso'])? $_SESSION['acceso'] : NULL;
- if($_SESSION['acceso']!="ok"){ 
- if($f_usuario=="lalo"){
-	           if($f_contra=="1234"){
-				   $_SESSION['acceso']="ok";
-			          }
-                }
- } else { header('Location: inde_pagina.php');
- echo "estoy aca";
-	 }
- ?>
- 
+
+
 <div id="login">
 <div id="formulario">
 <form id="f_acceso" name="f_acceso" action="" method="POST"  onSubmit="return validarFormulario();"> 
